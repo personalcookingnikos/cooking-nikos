@@ -1,246 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Cooking by Nikos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Cooking by Nikos</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --petrol: #0f4c5c;
-      --terracotta: #b2563c;
-      --beige: #f6efe9;
-      --dark: #2e2e2e;
-    }
+<style>
+:root {
+  --petrol: #0f4c5c;
+  --terracotta: #b2563c;
+  --beige: #f6efe9;
+  --dark: #2e2e2e;
+  --white: #ffffff;
+}
 
-    body {
-      font-family: 'Lato', sans-serif;
-      margin: 0;
-      background-color: var(--beige);
-      color: var(--dark);
-      scroll-behavior: smooth;
-    }
+body {
+  margin:0;
+  font-family:'Lato', sans-serif;
+  background: var(--beige);
+  color: var(--dark);
+  scroll-behavior: smooth;
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: var(--beige);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background: var(--beige);
+  position: sticky;
+  top:0;
+  z-index:1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
 
-    header img {
-      height: 100px;
-    }
+header img {
+  height:100px;
+}
 
-    nav a, nav button {
-      color: var(--petrol);
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+nav {
+  display:flex;
+  align-items:center;
+}
 
-    nav a:hover, nav button:hover {
-      color: var(--terracotta);
-    }
+nav a, nav button {
+  margin-left:20px;
+  font-weight:600;
+  font-size:1rem;
+  text-decoration:none;
+  color: var(--petrol);
+  background:none;
+  border:none;
+  cursor:pointer;
+}
 
-    .hero {
-      background-image: url('https://cdnb.artstation.com/p/assets/images/images/026/104/729/large/erika-romera-cocina-v2.jpg?1587898386');
-      background-size: cover;
-      background-position: center;
-      padding: 140px 20px;
-      text-align: center;
-      color: #fff;
-    }
+nav a:hover, nav button:hover { color: var(--terracotta); }
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+header.scrolled {
+  background: var(--white);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
 
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-    }
+header.scrolled nav a, header.scrolled nav button {
+  color: var(--petrol);
+}
 
-    .btn {
-      background-color: var(--terracotta);
-      color: white;
-      padding: 14px 32px;
-      border: none;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 6px;
-      text-decoration: none;
-    }
+.hero {
+  background-image: url('https://cdnb.artstation.com/p/assets/images/images/026/104/729/large/erika-romera-cocina-v2.jpg?1587898386');
+  background-size:cover;
+  background-position:center;
+  text-align:center;
+  color: var(--white);
+  padding: 140px 20px;
+  position: relative;
+}
 
-    .btn:hover {
-      background-color: #9d4a33;
-    }
+.hero h1 {
+  font-family:'Playfair Display', serif;
+  font-size:3rem;
+  margin-bottom:15px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
 
-    section {
-      padding: 80px 60px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.hero p {
+  font-size:1.3rem;
+  margin-bottom:30px;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
 
-    h2 {
-      font-family: 'Playfair Display', serif;
-      color: var(--petrol);
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
+.btn {
+  background: var(--terracotta);
+  color: var(--white);
+  padding:14px 32px;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:8px;
+  text-decoration:none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.btn:hover { background:#9d4a33; transform: translateY(-2px); }
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
+section { max-width:1100px; margin:auto; padding:80px 40px; }
 
-    .about, .services, .press {
-      background-color: white;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      margin-bottom: 40px;
-    }
+h2 {
+  font-family:'Playfair Display', serif;
+  color: var(--petrol);
+  margin-bottom:25px;
+  font-size:2rem;
+}
 
-    .contact {
-      background-color: var(--petrol);
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
-    }
+p { font-size:1.1rem; line-height:1.7; }
 
-    .contact h2 {
-      color: white;
-    }
+.about, .services, .press, .contact-section {
+  background: var(--white);
+  border-radius:16px;
+  padding:40px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.1);
+  margin-bottom:50px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: var(--terracotta);
-      color: white;
-    }
+.about img { float:right; max-width:300px; margin-left:25px; border-radius:12px; }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-      }
-      nav a, nav button {
-        margin: 5px 10px;
-      }
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-    }
-  </style>
+.contact-section {
+  background: var(--petrol);
+  color: var(--white);
+  text-align:center;
+  padding:80px 40px;
+  border-radius:16px;
+}
+
+.contact-section h2 { color: var(--white); margin-bottom:20px; }
+
+.contact-section .btn { margin-top:20px; display:inline-block; }
+
+footer {
+  text-align:center;
+  padding:25px;
+  background: var(--terracotta);
+  color: var(--white);
+}
+
+@media(max-width:768px){
+  header{flex-direction:column;}
+  nav a, nav button{margin:8px 10px;}
+  .hero h1{font-size:2.2rem;}
+  .about img{float:none; display:block; margin:auto 0 25px 0;}
+  section {padding:60px 20px;}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header>
-    <img src="logo.png" alt="Personal Cooking by Nikos Logo" />
-    <nav>
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('gr')">GR</button>
-      <a href="#press" target="_blank">Press / Stories</a>
-      <a href="https://www.instagram.com/anagnostounik/" target="_blank">Instagram</a>
-    </nav>
-  </header>
+<!-- Header -->
+<header>
+  <img src="logo.png" alt="Personal Cooking by Nikos Logo"/>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#services">Services</a>
+    <a href="#press">Press / Stories</a>
+    <a href="#contact">Contact</a>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('gr')">GR</button>
+  </nav>
+</header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1 class="lang en">Personal Cooking by Nikos</h1>
-    <p class="lang en">Experience a fine dining journey in the comfort of your home.</p>
-    <h1 class="lang gr" style="display:none;">Personal Cooking by Nikos</h1>
-    <p class="lang gr" style="display:none;">Ζήστε μια μοναδική γαστρονομική εμπειρία στον χώρο σας.</p>
-    <a href="#about" class="btn lang en">Learn More</a>
-    <a href="#about" class="btn lang gr" style="display:none;">Περισσότερα</a>
-  </section>
+<!-- Hero -->
+<section id="hero" class="hero">
+  <h1 class="lang en">Personal Cooking by Nikos</h1>
+  <p class="lang en">Experience a fine dining journey in the comfort of your home.</p>
+  <h1 class="lang gr" style="display:none;">Personal Cooking by Nikos</h1>
+  <p class="lang gr" style="display:none;">Ζήστε μια μοναδική γαστρονομική εμπειρία στον χώρο σας.</p>
+  <a href="#about" class="btn lang en">Learn More</a>
+  <a href="#about" class="btn lang gr" style="display:none;">Περισσότερα</a>
+</section>
 
-  <!-- About Me -->
-  <section id="about" class="about">
-    <div class="lang en">
-      <h2>About Me</h2>
-      <p>
-        Hi, I’m Nikos, a graduate of Le Monde with over 20 years of experience in the culinary world.
-        I’ve worked in Michelin-starred restaurants and prestigious hotels. My cooking blends Mediterranean flavors
-        with French techniques and Japanese-Peruvian touches inspired by Matsuhisa by Nobu in Athens and Nobu London.
-        I chose Personal Cooking to connect directly with my guests and to express the artistry of cooking in a more intimate way.
-        Enjoy a warm, relaxed, and unforgettable culinary experience at home – one you’ll be eager to repeat.
-      </p>
-    </div>
-    <div class="lang gr" style="display:none;">
-      <h2>Σχετικά με μένα</h2>
-      <p>
-        Γεια! Είμαι ο Νίκος, απόφοιτος της Le Monde με πάνω από 20 χρόνια εμπειρίας στη μαγειρική.
-        Έχω εργαστεί σε εστιατόρια με Michelin αστέρια και σε ξενοδοχεία. Η μαγειρική μου συνδυάζει μεσογειακές γεύσεις
-        με γαλλικές τεχνικές και στοιχεία Japanese-Peruvian από Matsuhisa by Nobu Athens και Nobu London.
-        Επέλεξα το Personal Cooking για να έχω προσωπική επαφή με τους πελάτες και να εκφράζω την τέχνη της μαγειρικής πιο ελεύθερα.
-        Απολαύστε μια ζεστή, χαλαρή και αξέχαστη γαστρονομική εμπειρία στον χώρο σας.
-      </p>
-    </div>
-  </section>
+<!-- About Me -->
+<section id="about" class="about">
+  <div class="lang en">
+    <h2>About Me</h2>
+    <img src="your-photo.jpg" alt="Nikos" />
+    <p>Hi, I’m Nikos, a graduate of Le Monde with over 20 years of experience in the culinary world. I’ve worked in Michelin-starred restaurants and prestigious hotels. My cooking blends Mediterranean flavors with French techniques and Japanese-Peruvian touches inspired by Matsuhisa by Nobu in Athens and Nobu London. I chose Personal Cooking to connect directly with my guests and express the artistry of cooking in a more intimate way. Enjoy a warm, relaxed, and unforgettable culinary experience at home – one you’ll be eager to repeat.</p>
+  </div>
+  <div class="lang gr" style="display:none;">
+    <h2>Σχετικά με μένα</h2>
+    <img src="your-photo.jpg" alt="Nikos" />
+    <p>Γεια! Είμαι ο Νίκος, απόφοιτος της Le Monde με πάνω από 20 χρόνια εμπειρίας στη μαγειρική. Έχω εργαστεί σε εστιατόρια με Michelin αστέρια και σε ξενοδοχεία. Η μαγειρική μου συνδυάζει μεσογειακές γεύσεις με γαλλικές τεχνικές και στοιχεία Japanese-Peruvian από Matsuhisa by Nobu Athens και Nobu London. Επέλεξα το Personal Cooking για να έχω προσωπική επαφή με τους πελάτες και να εκφράζω την τέχνη της μαγειρικής πιο ελεύθερα. Απολαύστε μια ζεστή, χαλαρή και αξέχαστη γαστρονομική εμπειρία στον χώρο σας.</p>
+  </div>
+</section>
 
-  <!-- Services -->
-  <section id="services" class="services">
-    <div class="lang en">
-      <h2>Services</h2>
-      <p>
-        I offer high-quality home dining experiences tailored to your taste.
-        From Mediterranean flavors to international cuisine, everything is designed around you.
-      </p>
-    </div>
-    <div class="lang gr" style="display:none;">
-      <h2>Υπηρεσίες</h2>
-      <p>
-        Προσφέρω υψηλής ποιότητας γεύματα στο σπίτι προσαρμοσμένα στις προτιμήσεις σας.
-        Από μεσογειακές γεύσεις μέχρι διεθνή κουζίνα, όλα σχεδιασμένα γύρω από εσάς.
-      </p>
-    </div>
-  </section>
+<!-- Services -->
+<section id="services" class="services">
+  <div class="lang en">
+    <h2>Services</h2>
+    <p>I offer high-quality home dining experiences tailored to your taste. From Mediterranean flavors to international cuisine, everything is designed around you.</p>
+  </div>
+  <div class="lang gr" style="display:none;">
+    <h2>Υπηρεσίες</h2>
+    <p>Προσφέρω υψηλής ποιότητας γεύματα στο σπίτι προσαρμοσμένα στις προτιμήσεις σας. Από μεσογειακές γεύσεις μέχρι διεθνή κουζίνα, όλα σχεδιασμένα γύρω από εσάς.</p>
+  </div>
+</section>
 
-  <!-- Press / Stories -->
-  <section id="press" class="press">
-    <h2>Press / Stories</h2>
-    <p>
-      Read my feature on Le Monde here: 
-      <a href="https://www.lemonde.edu.gr/en/nikos-anagnostoy/" target="_blank">Success Story – Nikos Anagnostou</a>
-    </p>
-  </section>
+<!-- Press / Stories -->
+<section id="press" class="press">
+  <h2>Press / Stories</h2>
+  <p>Read my feature on Le Monde here: <a href="https://www.lemonde.edu.gr/en/nikos-anagnostoy/" target="_blank">Success Story – Nikos Anagnostou</a></p>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <div class="lang en">
-      <h2>Contact</h2>
-      <p>Email: <strong>anagnostou.nikos1983@gmail.com</strong></p>
-    </div>
-    <div class="lang gr" style="display:none;">
-      <h2>Επικοινωνία</h2>
-      <p>Email: <strong>anagnostou.nikos1983@gmail.com</strong></p>
-    </div>
-  </section>
+<!-- Contact -->
+<section id="contact" class="contact-section">
+  <div class="lang en">
+    <h2>Contact</h2>
+    <p>Email: <strong>anagnostou.nikos1983@gmail.com</strong></p>
+    <a href="https://www.instagram.com/anagnostounik/" target="_blank" class="btn">Instagram</a>
+  </div>
+  <div class="lang gr" style="display:none;">
+    <h2>Επικοινωνία</h2>
+    <p>Email: <strong>anagnostou.nikos1983@gmail.com</strong></p>
+    <a href="https://www.instagram.com/anagnostounik/" target="_blank" class="btn">Instagram</a>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Personal Cooking by Nikos. All rights reserved.</p>
-  </footer>
+<!-- Footer -->
+<footer>
+  <p>© 2025 Personal Cooking by Nikos. All rights reserved.</p>
+</footer>
 
-  <!-- Language toggle script -->
-  <script>
-    function setLang(lang)
+<script>
+function setLang(lang){
+  document.querySelectorAll('.lang').forEach(el=>el.style.display='none');
+  document.querySelectorAll('.'+lang).forEach(el=>el.style.display='block');
+}
 
+// Scroll effect for header
+window.addEventListener('scroll', function(){
+  const header = document.querySelector('header');
+  if(window.scrollY > 50){
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+</script>
+
+</body>
+</html>
