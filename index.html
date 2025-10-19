@@ -1,0 +1,196 @@
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Cooking by Nikos</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --petrol: #0f4c5c;
+      --terracotta: #b2563c;
+      --beige: #f6efe9;
+      --dark: #2e2e2e;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      background-color: var(--beige);
+      color: var(--dark);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: var(--beige);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    nav a {
+      color: var(--petrol);
+      text-decoration: none;
+      margin-left: 30px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: var(--terracotta);
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1603133872878-684f208fb84b');
+      background-size: cover;
+      background-position: center;
+      padding: 140px 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background-color: var(--terracotta);
+      color: white;
+      padding: 14px 32px;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #9d4a33;
+    }
+
+    section {
+      padding: 80px 60px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--petrol);
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .menus {
+      background-color: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .contact {
+      background-color: var(--petrol);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .contact h2 {
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--terracotta);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 10px;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="logo.png" alt="Personal Cooking by Nikos Logo" />
+    <nav>
+      <a href="#about">About</a>
+      <a href="#menus">Menus</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Personal Cooking by Nikos</h1>
+    <p>Experience a fine dining journey in the comfort of your home.</p>
+    <a href="#about" class="btn">Learn More</a>
+  </section>
+
+  <section id="about">
+    <h2>A Personal Touch</h2>
+    <p>
+      Discover the joy of fine dining in your own space. Each experience is crafted
+      with care, featuring local and seasonal ingredients, authentic recipes,
+      and the warmth of true hospitality.
+    </p>
+  </section>
+
+  <section id="menus" class="menus">
+    <h2>Menus</h2>
+    <p>
+      Choose from a curated selection of menus or request a fully custom
+      experience. From Mediterranean flavors to refined international cuisine —
+      everything is designed around your taste.
+    </p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>
+      Interested in booking a private dining experience?  
+      Email me at <strong>personal.cooking.nikos@example.com</strong>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Personal Cooking by Nikos. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
