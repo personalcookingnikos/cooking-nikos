@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Cooking by Nikos</title>
 
   <!-- Google Fonts -->
@@ -28,7 +28,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 60px;
+      padding: 20px 40px;
       background-color: var(--beige);
       position: sticky;
       top: 0;
@@ -37,23 +37,26 @@
     }
 
     header img {
-      height: 60px;
+      height: 100px;
     }
 
-    nav a {
+    nav a, nav button {
       color: var(--petrol);
       text-decoration: none;
-      margin-left: 30px;
+      margin-left: 20px;
       font-weight: 600;
       font-size: 1.1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
-    nav a:hover {
+    nav a:hover, nav button:hover {
       color: var(--terracotta);
     }
 
     .hero {
-      background-image: url('https://images.unsplash.com/photo-1603133872878-684f208fb84b');
+      background-image: url('https://cdnb.artstation.com/p/assets/images/images/026/104/729/large/erika-romera-cocina-v2.jpg?1587898386');
       background-size: cover;
       background-position: center;
       padding: 140px 20px;
@@ -106,11 +109,12 @@
       line-height: 1.7;
     }
 
-    .menus {
+    .about, .services, .press {
       background-color: white;
       border-radius: 16px;
       padding: 40px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
     }
 
     .contact {
@@ -135,8 +139,8 @@
       header {
         flex-direction: column;
       }
-      nav a {
-        margin: 10px;
+      nav a, nav button {
+        margin: 5px 10px;
       }
       .hero h1 {
         font-size: 2.2rem;
@@ -147,50 +151,95 @@
 
 <body>
 
+  <!-- Header -->
   <header>
     <img src="logo.png" alt="Personal Cooking by Nikos Logo" />
     <nav>
-      <a href="#about">About</a>
-      <a href="#menus">Menus</a>
-      <a href="#contact">Contact</a>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('gr')">GR</button>
+      <a href="#press" target="_blank">Press / Stories</a>
+      <a href="https://www.instagram.com/anagnostounik/" target="_blank">Instagram</a>
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <h1>Personal Cooking by Nikos</h1>
-    <p>Experience a fine dining journey in the comfort of your home.</p>
-    <a href="#about" class="btn">Learn More</a>
+    <h1 class="lang en">Personal Cooking by Nikos</h1>
+    <p class="lang en">Experience a fine dining journey in the comfort of your home.</p>
+    <h1 class="lang gr" style="display:none;">Personal Cooking by Nikos</h1>
+    <p class="lang gr" style="display:none;">Ζήστε μια μοναδική γαστρονομική εμπειρία στον χώρο σας.</p>
+    <a href="#about" class="btn lang en">Learn More</a>
+    <a href="#about" class="btn lang gr" style="display:none;">Περισσότερα</a>
   </section>
 
-  <section id="about">
-    <h2>A Personal Touch</h2>
+  <!-- About Me -->
+  <section id="about" class="about">
+    <div class="lang en">
+      <h2>About Me</h2>
+      <p>
+        Hi, I’m Nikos, a graduate of Le Monde with over 20 years of experience in the culinary world.
+        I’ve worked in Michelin-starred restaurants and prestigious hotels. My cooking blends Mediterranean flavors
+        with French techniques and Japanese-Peruvian touches inspired by Matsuhisa by Nobu in Athens and Nobu London.
+        I chose Personal Cooking to connect directly with my guests and to express the artistry of cooking in a more intimate way.
+        Enjoy a warm, relaxed, and unforgettable culinary experience at home – one you’ll be eager to repeat.
+      </p>
+    </div>
+    <div class="lang gr" style="display:none;">
+      <h2>Σχετικά με μένα</h2>
+      <p>
+        Γεια! Είμαι ο Νίκος, απόφοιτος της Le Monde με πάνω από 20 χρόνια εμπειρίας στη μαγειρική.
+        Έχω εργαστεί σε εστιατόρια με Michelin αστέρια και σε ξενοδοχεία. Η μαγειρική μου συνδυάζει μεσογειακές γεύσεις
+        με γαλλικές τεχνικές και στοιχεία Japanese-Peruvian από Matsuhisa by Nobu Athens και Nobu London.
+        Επέλεξα το Personal Cooking για να έχω προσωπική επαφή με τους πελάτες και να εκφράζω την τέχνη της μαγειρικής πιο ελεύθερα.
+        Απολαύστε μια ζεστή, χαλαρή και αξέχαστη γαστρονομική εμπειρία στον χώρο σας.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="lang en">
+      <h2>Services</h2>
+      <p>
+        I offer high-quality home dining experiences tailored to your taste.
+        From Mediterranean flavors to international cuisine, everything is designed around you.
+      </p>
+    </div>
+    <div class="lang gr" style="display:none;">
+      <h2>Υπηρεσίες</h2>
+      <p>
+        Προσφέρω υψηλής ποιότητας γεύματα στο σπίτι προσαρμοσμένα στις προτιμήσεις σας.
+        Από μεσογειακές γεύσεις μέχρι διεθνή κουζίνα, όλα σχεδιασμένα γύρω από εσάς.
+      </p>
+    </div>
+  </section>
+
+  <!-- Press / Stories -->
+  <section id="press" class="press">
+    <h2>Press / Stories</h2>
     <p>
-      Discover the joy of fine dining in your own space. Each experience is crafted
-      with care, featuring local and seasonal ingredients, authentic recipes,
-      and the warmth of true hospitality.
+      Read my feature on Le Monde here: 
+      <a href="https://www.lemonde.edu.gr/en/nikos-anagnostoy/" target="_blank">Success Story – Nikos Anagnostou</a>
     </p>
   </section>
 
-  <section id="menus" class="menus">
-    <h2>Menus</h2>
-    <p>
-      Choose from a curated selection of menus or request a fully custom
-      experience. From Mediterranean flavors to refined international cuisine —
-      everything is designed around your taste.
-    </p>
-  </section>
-
+  <!-- Contact -->
   <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>
-      Interested in booking a private dining experience?  
-      Email me at <strong>personal.cooking.nikos@example.com</strong>
-    </p>
+    <div class="lang en">
+      <h2>Contact</h2>
+      <p>Email: <strong>anagnostou.nikos1983@gmail.com</strong></p>
+    </div>
+    <div class="lang gr" style="display:none;">
+      <h2>Επικοινωνία</h2>
+      <p>Email: <strong>anagnostou.nikos1983@gmail.com</strong></p>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 Personal Cooking by Nikos. All rights reserved.</p>
   </footer>
 
-</body>
-</html>
+  <!-- Language toggle script -->
+  <script>
+    function setLang(lang)
